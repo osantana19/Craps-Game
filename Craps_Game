@@ -1,0 +1,30 @@
+import random
+
+
+choice = 'y'
+while choice == 'y':
+
+    print('Welcome to Craps')
+    roll = random.randint(2,12)
+    
+    if roll == 7 or roll == 11:
+        print('You won! You rolled a %d' %roll)
+        print('Press \'y\' to play again')
+        choice = input()       
+    else:
+        point = roll
+        print (' You rolled a point of %d' %point)
+
+        roll = 0
+
+        while roll != 7 and roll != 11 and roll != point:
+            roll = random.randint(2,12)
+    
+            if roll == 7 or roll == 11:
+                print('You lost you rolled a %d' %roll)
+            elif roll == point:
+                print('You won you rolled a %d' %roll)
+            else:
+                print('You rolled a %d' %roll)
+        print('Press \'y\' to play again')
+        choice = input()
